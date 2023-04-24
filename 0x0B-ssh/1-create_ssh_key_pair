@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 # This script creates an ssh key named school with the password betty 
-ssh-keygen -N "betty" -f school -b 4096
+ssh-keygen -t rsa -N "betty" -f school -b 4096
 
