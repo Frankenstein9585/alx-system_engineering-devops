@@ -1,7 +1,7 @@
 # edit shh_config using puppet
 file_line {'add line to file':
   path    => '/etc/ssh/ssh_config',
-  content => 'PasswordAuthentication no',
+  line => 'PasswordAuthentication no',
 }
 
 file_line{'add line to file':
