@@ -10,4 +10,4 @@ ip=$2
 username=$3
 ssh_key_path=$4
 
-scp -o StrictHostKeyChecking=no -i $path_to_file $username@$ip:~/ $ssh_key_path
+scp -o StrictHostKeyChecking=no -i $ssh_key_path $path_to_file $username@$ip:~/
