@@ -26,7 +26,7 @@ location /redirect_me {
 EOF
 
 if pgrep nginx > /dev/null; then
-	kill -HUP $(pgrep nginx)
+	kill -HUP "$(pgrep nginx)"
 else
 	/usr/sbin/nginx
 fi
