@@ -1,2 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env bashi
+# Run Apache
+echo "ServerName localhost" >> /etc/apache2.conf
 service apache2 start
