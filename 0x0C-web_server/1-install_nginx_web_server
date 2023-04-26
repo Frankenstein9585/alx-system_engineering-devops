@@ -1,31 +1,28 @@
 #!/usr/bin/env bash
 # This script installs and configures nginx
 sudo apt-get install -y nginx
-if [ $? -eq 0 ]
-then
-echo -e \
-"http {
-	root /var/www/school;
-	index index.html;
-	server {
-		listen 80;
-		location \ {
-		}
-	}
+if ! pgrep nginx > /dev/null ; then
+	/usr/sbin/nginx
+fi
+
+cat > /etc/nginx/sites-available/default <<EOF
+server {
+listen 80 default_server;
+listen [::]:80 default_server;
+
+root /var/www/html;
+index index.html
+
+location / {
+	try_files \$uri \$uri/ =404;
+	add_header Content-Type text/html
+	return 200 'Hello World!';
 }
-events {
-}" > /etc/nginx/nginx.conf
-mkdir -p /var/www/school
-echo "Hello World!" > \
-	/var/www/school/index.html
-service nginx start
-if [ $? -ne 0 ]
-then
-	echo "Problem starting  ngnix"
-	exit 1
-fi
+}
+EOF
+
+if pgrep nginx > /dev/null; then
+	kill -HUP $(pgrep nginx)
 else
-	echo " Could not install nginx
-	exit 1
+	/usr/sbin/nginx
 fi
-exit 0
