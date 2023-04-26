@@ -1,0 +1,32 @@
+#!/usr/bin/env bash
+# This script installs and configures nginx
+sudo apt-get install -y nginx
+if ! pgrep nginx > /dev/null ; then
+	/usr/sbin/nginx
+fi
+echo "Hello World!" > /var/www/html/index.html
+cat > /etc/nginx/sites-available/default <<EOF
+server {
+listen 80 default_server;
+listen [::]:80 default_server;
+
+root /var/www/html;
+index index.html
+
+location / {
+	try_files \$uri \$uri/ =404;
+	add_header Content-Type text/html
+	return 200 'Hello World!';
+}
+
+location /redirect_me {
+	return 301 google.com
+}
+}
+EOF
+
+if pgrep nginx > /dev/null; then
+	kill -HUP $(pgrep nginx)
+else
+	/usr/sbin/nginx
+fi
