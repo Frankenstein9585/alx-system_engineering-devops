@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+# This script installs and configures nginx
+sudo apt-get install -y nginx
+echo -e \
+"http {
+	root /var/www/school;
+	index index.html;
+	server {
+		listen 80;
+		location \ {
+		}
+	}
+}
+events {
+}" > /etc/nginx/nginx.conf
+mkdir -p /var/www/school
+echo "Hello World!" > \
+	/var/www/school/index.html
+service nginx start
