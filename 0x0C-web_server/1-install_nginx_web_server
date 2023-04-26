@@ -4,7 +4,7 @@ sudo apt-get install -y nginx
 if ! pgrep nginx > /dev/null ; then
 	/usr/sbin/nginx
 fi
-
+echo "Hello World!" > /var/www/html/index.html
 cat > /etc/nginx/sites-available/default <<EOF
 server {
 listen 80 default_server;
