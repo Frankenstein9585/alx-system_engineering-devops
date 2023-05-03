@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# This script makes nginx listen on port 80
+service nginx restart
+cat > /etc/nginx/sites-available/default <<EOF
+server {
+listen 80 default_server;
+listen [::]:80 default_server;
+}
+EOF
