@@ -1,9 +1,11 @@
 #!/usr/bin/python3
+import sys
+
 import requests
 
 
 def employee_todo_progress(employee_id):
-    url = 'https://jsonplaceholder.typicode.com/'
+    url = 'https://jsonplaceholder.typicode.com'
 
     # employee details
     employee_url = '{}/users/{}'.format(url, employee_id)
@@ -11,7 +13,7 @@ def employee_todo_progress(employee_id):
     employee_data = response.json()
 
     # employee's to-do list
-    todo_url = '{}/todos/{}'.format(url, employee_id)
+    todo_url = '{}/todos/?userId={}'.format(url, employee_id)
     response = requests.get(todo_url)
     todo_data = response.json()
 
@@ -27,5 +29,5 @@ def employee_todo_progress(employee_id):
         print('\t', task['title'])
 
 
-employee_id = int(input())
+employee_id = sys.argv[1]
 employee_todo_progress(employee_id)
