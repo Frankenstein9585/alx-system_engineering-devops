@@ -21,16 +21,16 @@ def employee_todo_progress(employee_id):
     todo_data = response.json()
 
     # Get required info
-    employee_name = employee_data['name']
+    employee_name = employee_data.get('name')
     total_tasks = len(todo_data)
-    completed_tasks = [task for task in todo_data if task['completed']]
+    completed_tasks = [task for task in todo_data if task.get('title')]
     num_completed_tasks = len(completed_tasks)
 
     # Display progress
     print('Employee {} is done with tasks ({}/{}):'.format(
         employee_name, num_completed_tasks, total_tasks))
     for task in completed_tasks:
-        print('\t', task['title'])
+        print('\t', task.get('title'))
 
 
 employee_id = sys.argv[1]
