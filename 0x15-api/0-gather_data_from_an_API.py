@@ -1,10 +1,13 @@
 #!/usr/bin/python3
-import sys
+"""This script uses a REST API for a given employee ID,
+returns information about his/her TO-DO list progress."""
 
 import requests
+import sys
 
 
 def employee_todo_progress(employee_id):
+    """This function gets the employees to-do progress"""
     url = 'https://jsonplaceholder.typicode.com'
 
     # employee details
@@ -24,7 +27,8 @@ def employee_todo_progress(employee_id):
     num_completed_tasks = len(completed_tasks)
 
     # Display progress
-    print('Employee {} is done with tasks ({}/{}):'.format(employee_name, num_completed_tasks, total_tasks))
+    print('Employee {} is done with tasks ({}/{}):'.format(
+        employee_name, num_completed_tasks, total_tasks))
     for task in completed_tasks:
         print('\t', task['title'])
 
