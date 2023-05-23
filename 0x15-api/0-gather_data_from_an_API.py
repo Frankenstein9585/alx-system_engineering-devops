@@ -1,6 +1,8 @@
 #!/usr/bin/python3
-"""This script uses a REST API for a given employee ID,
-returns information about his/her TO-DO list progress."""
+"""
+This script uses a REST API for a given employee ID,
+returns information about his/her TO-DO list progress.
+"""
 
 import requests
 import sys
@@ -33,5 +35,6 @@ def employee_todo_progress(employee_id):
         print('\t', task.get('title'))
 
 
-employee_id = sys.argv[1]
-employee_todo_progress(employee_id)
+if __name__ == "__main__":
+    employee_id = sys.argv[1]
+    employee_todo_progress(employee_id)
