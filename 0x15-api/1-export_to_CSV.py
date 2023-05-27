@@ -25,12 +25,6 @@ def employee_todo_progress(employee_id):
     todo_data = response.json()
     # print(todo_data)
 
-    # Get required info
-    employee_name = employee_data.get('name')
-    total_tasks = len(todo_data)
-    completed_tasks = [task for task in todo_data if task.get('completed')]
-    num_completed_tasks = len(completed_tasks)
-
     with open('{}.csv'.format(employee_id), 'w', newline='') as csvfile:
         csv_writer = csv.writer(csvfile)
 
