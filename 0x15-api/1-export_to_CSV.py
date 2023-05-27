@@ -31,10 +31,8 @@ def employee_todo_progress(employee_id):
         for task in todo_data:
             csv_list = [employee_id, employee_data.get("username"),
                         task.get('completed'), task.get('title')]
-            formatted_list = ['"{}"'.format(item) for item in csv_list]
-            print(formatted_list)
 
-            csv_writer.writerow(formatted_list)
+            csv_writer.writerow(csv_list)
 
 
 if __name__ == "__main__":

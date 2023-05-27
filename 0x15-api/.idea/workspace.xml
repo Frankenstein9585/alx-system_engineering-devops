@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0a98fe50-6dc7-450c-91cf-244e1667e0be" name="Changes" comment="Modified task 0 one more time">
-      <change afterPath="$PROJECT_DIR$/1-export_to_CSV.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main_1.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="0a98fe50-6dc7-450c-91cf-244e1667e0be" name="Changes" comment="Done task 1">
+      <change beforePath="$PROJECT_DIR$/1-export_to_CSV.py" beforeDir="false" afterPath="$PROJECT_DIR$/1-export_to_CSV.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -133,7 +131,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1684849120452</updated>
-      <workItem from="1685206858320" duration="3730000" />
+      <workItem from="1685206858320" duration="4040000" />
     </task>
     <task id="LOCAL-00001" summary="Done task 0">
       <created>1684872490777</created>
@@ -184,7 +182,21 @@
       <option name="project" value="LOCAL" />
       <updated>1685211246134</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Modified task 0 one more time">
+      <created>1685213669710</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1685213669710</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Done task 1">
+      <created>1685213715359</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1685213715359</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -196,10 +208,11 @@
     <MESSAGE value="Modified task 0 again" />
     <MESSAGE value="Modified task 0 again again" />
     <MESSAGE value="Modified task 0 one more time" />
-    <option name="LAST_COMMIT_MESSAGE" value="Modified task 0 one more time" />
+    <MESSAGE value="Done task 1" />
+    <option name="LAST_COMMIT_MESSAGE" value="Done task 1" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/0x15_api$0_gather_data_from_an_API.coverage" NAME="0-gather_data_from_an_API Coverage Results" MODIFIED="1685212430144" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/0x15_api$1_export_to_CSV.coverage" NAME="1-export_to_CSV Coverage Results" MODIFIED="1685213507931" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/0x15_api$1_export_to_CSV.coverage" NAME="1-export_to_CSV Coverage Results" MODIFIED="1685213921042" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
