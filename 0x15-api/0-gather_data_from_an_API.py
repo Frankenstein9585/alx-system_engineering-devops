@@ -17,10 +17,12 @@ def employee_todo_progress(employee_id):
     response = requests.get(employee_url)
     employee_data = response.json()
 
+    # print(employee_data)
     # employee's to-do list
     todo_url = '{}/todos/?userId={}'.format(url, employee_id)
     response = requests.get(todo_url)
     todo_data = response.json()
+    # print(todo_data)
 
     # Get required info
     employee_name = employee_data.get('name')
@@ -32,7 +34,7 @@ def employee_todo_progress(employee_id):
     print('Employee {} is done with tasks ({}/{}):'.format(
         employee_name, num_completed_tasks, total_tasks))
     for task in completed_tasks:
-        print('\t', task.get('title'))
+        print('\t ', task.get('title'))
 
 
 if __name__ == "__main__":
