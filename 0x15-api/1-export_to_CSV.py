@@ -3,6 +3,7 @@
 This script uses a REST API for a given employee ID,
 returns information about his/her TO-DO list progress.
 """
+import csv
 
 import requests
 import sys
@@ -24,17 +25,14 @@ def employee_todo_progress(employee_id):
     todo_data = response.json()
     # print(todo_data)
 
-    # Get required info
-    employee_name = employee_data.get('name')
-    total_tasks = len(todo_data)
-    completed_tasks = [task for task in todo_data if task.get('completed')]
-    num_completed_tasks = len(completed_tasks)
+    with open('{}.csv'.format(employee_id), 'w', newline='') as csvfile:
+        csv_writer = csv.writer(csvfile)
 
-    # Display progress
-    print('Employee {} is done with tasks ({}/{}):'.format(
-        employee_name, num_completed_tasks, total_tasks))
-    for task in completed_tasks:
-        print('\t ', task.get('title'))
+        for task in todo_data:
+            csv_list = [employee_id, employee_data.get("username"),
+                        task.get('completed'), task.get('title')]
+
+            csv_writer.writerow(csv_list)
 
 
 if __name__ == "__main__":
