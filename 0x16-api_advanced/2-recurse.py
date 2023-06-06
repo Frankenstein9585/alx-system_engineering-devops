@@ -13,7 +13,8 @@ def recurse(subreddit, hot_list=None, after=None):
     headers = {'User-Agent': 'Custom User Agent'}
     params = {'after': after} if after else None
 
-    response = requests.get(url, headers=headers, params=params, allow_redirects=False)
+    response = requests.get(url, headers=headers, params=params,
+                            allow_redirects=False)
 
     if response.status_code == 200:
         data = response.json()
